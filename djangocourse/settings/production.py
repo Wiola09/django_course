@@ -28,9 +28,10 @@ SECRET_KEY = get_secret('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = get_secret('SECRET_KEY').split(',')
+print(ALLOWED_HOSTS)
 
-
-CSRF_TRUSTED_ORIGINS = get_secret('CSRF_TRUSTED_ORIGINS')
+CSRF_TRUSTED_ORIGINS = get_secret('CSRF_TRUSTED_ORIGINS', backup='http://example.com')
+print(CSRF_TRUSTED_ORIGINS)
 # Application definition
 
 INSTALLED_APPS = [
