@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -30,7 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = get_secret('SECRET_KEY').split(',')
 print(ALLOWED_HOSTS)
 
-CSRF_TRUSTED_ORIGINS = get_secret('CSRF_TRUSTED_ORIGINS', backup='http://example.com')
+CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='', cast=Csv())
 print(CSRF_TRUSTED_ORIGINS)
 # Application definition
 
