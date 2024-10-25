@@ -14,5 +14,6 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry install
 
 COPY . .
+RUN poetry run python manage.py migrate
 
 ENTRYPOINT [ "poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000" ]
