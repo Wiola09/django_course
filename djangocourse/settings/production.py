@@ -26,7 +26,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = get_secret('DEBUG')
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 print(ALLOWED_HOSTS)
