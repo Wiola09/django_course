@@ -18,11 +18,13 @@ COPY . .
 ARG CSRF_TRUSTED_ORIGINS
 ARG SECRET_KEY
 ARG ALLOWED_HOSTS
+ARG DEBUG
 
 # Set the CSRF_TRUSTED_ORIGINS environment variable using the build argument
 ENV CSRF_TRUSTED_ORIGINS=${CSRF_TRUSTED_ORIGINS}
 ENV SECRET_KEY=${SECRET_KEY}
 ENV ALLOWED_HOSTS=${ALLOWED_HOSTS}
+ENV DEBUG=${DEBUG}
 RUN poetry run python manage.py migrate
 
 ENTRYPOINT [ "poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000" ]
