@@ -10,28 +10,26 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from pathlib import Path
-from decouple import config, Csv
-#    poetry add python-decouple
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-import os
-SECRET_KEY = os.getenv('SECRET_KEY', config('SECRET_KEY'))
+from . import get_secret
+SECRET_KEY = get_secret('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('HOST', config('HOST')).split(',')
+ALLOWED_HOSTS = get_secret('SECRET_KEY').split(',')
 
-CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', config('CSRF_TRUSTED_ORIGINS', default='', cast=Csv()))
+
+CSRF_TRUSTED_ORIGINS = get_secret('CSRF_TRUSTED_ORIGINS')
 # Application definition
 
 INSTALLED_APPS = [
