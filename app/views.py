@@ -25,11 +25,11 @@ class ArticleUpdateView(UpdateView):
     model = Article
     fields = ("title", "status", "content", "word_count", "twitter_post")
     success_url = reverse_lazy("home")
-    context_object_name = "articles"
+    context_object_name = "article"
 
 
 class ArticleDeleteView(DeleteView):
     template_name = "app/obrisi_tekst.html"
     model = Article
     success_url = reverse_lazy("home")
-    context_object_name = "articles"
+    context_object_name = "article"
