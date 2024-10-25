@@ -11,7 +11,7 @@ WORKDIR /code
 
 RUN pip install poetry
 COPY pyproject.toml poetry.lock ./
-RUN install poetry
+
 COPY . .
 
 ENTRYPOINT [ "poetry", "run", "python", "manage.py", "runserver", 0.0.0.0:8000 ]
