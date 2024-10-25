@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrisi Tekst</title>
+</head>
+<body>
+    
+    <h1>Obrisi Tekst</h1>
+    <p>Da li si sigruan da želiš da obrišeš tekst?</p>
+    <form method ="POST">
+        {% csrf_token %}
+
+        <button type ="submit">Delete</button>
+    </form>
+    
+</body>
+</html>
