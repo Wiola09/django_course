@@ -11,6 +11,7 @@ WORKDIR /code
 
 RUN pip install poetry
 COPY pyproject.toml poetry.lock ./
+RUN poetry install
 
 COPY . .
 
