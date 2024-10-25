@@ -14,4 +14,4 @@ COPY pyproject.toml poetry.lock ./
 
 COPY . .
 
-ENTRYPOINT [ "poetry", "run", "python", "manage.py", "runserver", 0.0.0.0:8000 ]
+ENTRYPOINT [ "poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000" ]
