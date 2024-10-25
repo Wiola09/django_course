@@ -1,5 +1,3 @@
-app/__pycache__/*
-app/migrations/*
 db.sqlite3
-djangocourse/__pycache__/*
+*.pyc
 
