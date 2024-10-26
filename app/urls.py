@@ -3,7 +3,7 @@ from app.views import CreateArticleView, ArticleListView, ArticleUpdateView, Art
 
 urlpatterns = [
     path("", ArticleListView.as_view(), name="home"),
-    path("kreiraj/", CreateArticleView.as_view(), name="kreiraj_tekst"),
-    path("<int:pk>/izmeni/", ArticleUpdateView.as_view(), name="izmeni_tekst"),
-    path("<int:pk>/obrisi/", ArticleDeleteView.as_view(), name="obrisi_tekst"),
+    path("create/", CreateArticleView.as_view(), name="create_article"),
+    path("<int:pk>/update/", ArticleUpdateView.as_view(), name="update_article"),
+    path("<int:pk>/delete/", ArticleDeleteView.as_view(), name="delete_article"),
 ]

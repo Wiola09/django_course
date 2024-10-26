@@ -14,14 +14,14 @@ class ArticleListView(ListView):
     context_object_name = "articles"
 
 class CreateArticleView(CreateView):
-    template_name = "app/kreiraj_tekst.html"
+    template_name = "app/create_article.html"
     model = Article
     fields = ("title", "status", "content", "word_count", "twitter_post")
     success_url = reverse_lazy("home")
 
 
 class ArticleUpdateView(UpdateView):
-    template_name = "app/izmeni_tekst.html"
+    template_name = "app/update_article.html"
     model = Article
     fields = ("title", "status", "content", "word_count", "twitter_post")
     success_url = reverse_lazy("home")
@@ -29,7 +29,7 @@ class ArticleUpdateView(UpdateView):
 
 
 class ArticleDeleteView(DeleteView):
-    template_name = "app/obrisi_tekst.html"
+    template_name = "app/delete_article.html"
     model = Article
     success_url = reverse_lazy("home")
     context_object_name = "article"
